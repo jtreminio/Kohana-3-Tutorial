@@ -61,10 +61,9 @@ I18n::lang('en-us');
  * Note: If you supply an invalid environment name, a PHP warning will be thrown
  * saying "Couldn't find constant Kohana::<INVALID_ENV_NAME>"
  */
-if (isset($_SERVER['KOHANA_ENV']))
-{
-	Kohana::$environment = constant('Kohana::'.strtoupper($_SERVER['KOHANA_ENV']));
-}
+Kohana::$environment = isset($_SERVER['KOHANA_ENV'])
+	? constant('Kohana::'.strtoupper($_SERVER['KOHANA_ENV']))
+	: Kohana::PRODUCTION;
 
 /**
  * Initialize Kohana, setting the default options.
@@ -80,7 +79,11 @@ if (isset($_SERVER['KOHANA_ENV']))
  * - boolean  caching     enable or disable internal caching                 FALSE
  */
 Kohana::init(array(
-	'base_url'   => '/',
+	'base_url'   	=> '/',
+	'index_file' 	=> Kohana::$environment === Kohana::PRODUCTION,
+	'errors' 		=> Kohana::$environment !== Kohana::PRODUCTION,
+	'profile' 		=> Kohana::$environment !== Kohana::PRODUCTION,
+	'caching' 		=> Kohana::$environment === Kohana::PRODUCTION,
 ));
 
 /**
