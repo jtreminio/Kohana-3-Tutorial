@@ -6,7 +6,7 @@
 abstract class Kostache extends Kohana_Kostache
 {
 	/**
-	 * @var string Partial name for content
+	 * @var string Partial name for content ( {{>content}} )
 	 */
 	const CONTENT_PARTIAL = 'content';
 
@@ -17,16 +17,17 @@ abstract class Kostache extends Kohana_Kostache
 
 	/**
 	 * @var boolean Render template in layout?
+	 * 				This includes the base layout file with the Mustache template (Included with {{>[CONTENT_PARTIAL]}})
 	 */
-	public $render_layout = FALSE;
+	public $render_layout = TRUE;
 
 	/**
 	 * @var string Page title
 	 */
-	public $title = FALSE;
+	public $title;
 
 	/** @var string Defines base template to use.
-	 * 				It *must* have {{>content}} in it, calling the current view body.
+	 * 				It *must* have {{>[CONTENT_PARTIAL]}} in it, calling the current view body.
 	 * 				layout filename gets changed to ".{$_layout}.mustache"
 	 */
 	protected $_layout = 'layout';
@@ -65,11 +66,17 @@ abstract class Kostache extends Kohana_Kostache
 	 */
 	public function render()
 	{
+		/**
+		 * If base layout is not to be rendered
+		 */
 		if ( ! $this->render_layout)
 		{
 			return parent::render();
 		}
 
+		/**
+		 * We want to include the base layout
+		 */
 		$partials = $this->_partials;
 
 		$partials[self::CONTENT_PARTIAL] = $this->_template;
