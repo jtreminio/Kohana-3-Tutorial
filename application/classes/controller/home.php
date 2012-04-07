@@ -4,7 +4,8 @@ class Controller_Home extends Controller {
 
 	public function action_index()
 	{
-		$this->response->body('hello, world!');
+		$view = new View_Home;
+		$this->response->body($view->render());
 	}
 
 }
