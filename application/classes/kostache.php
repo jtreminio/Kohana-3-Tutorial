@@ -30,7 +30,7 @@ abstract class Kostache extends Kohana_Kostache
 	 * 				It *must* have {{>[CONTENT_PARTIAL]}} in it, calling the current view body.
 	 * 				layout filename gets changed to ".{$_layout}.mustache"
 	 */
-	protected $_layout = 'layout';
+	protected $_layout = '.layout';
 
 	/** @var array Defines partials/child template files */
 	protected $_partials = array();
