@@ -1,0 +1,3 @@
+[submodule "modules/KOstache"]
+	path = modules/KOstache
+	url = git://github.com/zombor/KOstache.git
