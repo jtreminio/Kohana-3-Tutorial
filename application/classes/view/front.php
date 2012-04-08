@@ -1,3 +1,3 @@
 <?php defined('SYSPATH') or die('No direct script access.');
 
-class View_Base extends Kostache{}
+class View_Front extends Kostache{}
