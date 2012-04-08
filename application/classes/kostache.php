@@ -4,6 +4,7 @@
  * This class provides basic functionality to all Kostache classes that extend it.
  */
 abstract class Kostache extends Kohana_Kostache {
+
 	/**
 	 * @var string Partial name for content ( {{>content}} )
 	 */
