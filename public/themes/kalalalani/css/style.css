@@ -1,0 +1,92 @@
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, font, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	outline: 0;
+	font-size: 100%;
+	vertical-align: baseline;
+	background: transparent;
+}
+body { line-height: 1; }
+ol, ul { list-style: none; }
+blockquote, q { quotes: none; }
+blockquote:before, blockquote:after,
+q:before, q:after { content: ''; content: none; }
+:focus { outline: 0; }
+ins { text-decoration: none; }
+del { text-decoration: line-through; }
+table { border-collapse: collapse; border-spacing: 0; }
+
+html, body { height: 100%; }
+body { background: #1a1a1a; font-family: "Helvetica Neue", Helvetica, Arial, sans-serif; letter-spacing: .08em; }
+
+/* NAV */
+ol#nav { width: 160px; height: 100%; position: fixed; top: 0; left: 0; background: #181818 url(../img/side.png) repeat-y fixed 0 0; padding: 40px 12px 0 0; }
+ol#nav li { text-align: right; text-transform: uppercase; font-size: 18px; font-weight: normal; }
+ol#nav li.home a { color: #17f0ff; font-size: 165px; height: 100px; overflow: hidden; font-weight: bold; margin: 0 -5px 0 0; text-align: right; *position: relative; *right: 0; }
+ol#nav li.home a:hover { background: none; color: #fff; }
+ol#nav li a { display: block; color: #fff; text-decoration: none; padding: 5px 8px 5px 0; }
+ol#nav li a:hover { background: #111; }
+ol#nav li.selected a { background: #100; }
+
+/* CONTENT */
+#content { width: 620px; position: relative; top: 69px; left: 190px; padding: 0 0 50px 0; }
+#content h1, #content h2 { text-transform: uppercase; font-weight: bold; }
+#content h1 { font-size: 72px; color: #ff1760; margin: 0 0 8px 0; letter-spacing: 0.02em; }
+#content h2 { font-size: 18px; color: #fff; margin: 0 0 32px 2px; font-weight: normal; }
+#content img, #content embed { background: #121212; padding: 9px; border: 1px solid #1e1e1e; max-width: 600px; }
+#content ol li { width: 620px; font-size: 14px; line-height: 22px; color: #666; padding: 0 0 10px 0; margin: 0 0 30px 0; }
+#content ol li:only-child { border: none; }
+
+#content blockquote { border-left: 3px solid #111; margin: 9px 0 10px 20px; padding: 0 0 0 10px; }
+#content blockquote p, #content blockquote a { font-size: 13px; color: #444; }
+#content ol li.quote blockquote { font-size: 20px; line-height: 26px; font-style: italic; font-family: "Georgia", Times New , serif; margin: 0 0 10px 0; color: #999; border: none; padding: 0; }
+#content ol li.quote cite { float: left; clear: both; width: 600px; font-size: 12px; font-style: italic; padding: 0 0 10px 0; }
+#content p { margin: 0 0 15px 0; font-weight: normal; }
+#content a { color: #999; }
+#content a:hover { color: #fff; }
+#content p.meta { clear: both; color: #333; font-style: italic; font-size: 12px; }
+#content p.meta a { color: #333; text-decoration: none; }
+#content p.meta a:hover { text-decoration: underline; }
+#content a.button { color: #fff; text-decoration: none; float: left; }
+#content a.button:hover { color: #666; text-decoration: none; }
+#content h3 { color: #fff; font-size: 20px; margin: 0 0 5px 0; line-height: 30px; }
+#content a.button.right { float: right; padding: 0; }
+#content embed, #content object { margin: 0 0 15px 0; }
+#content.sub { top: 60px; } 
+#content h1.white { color: #fff; width: 700px; margin-bottom: 20px; }
+#content strong { color: #999; }
+#content .regular h3 a { text-decoration: none; color: #fff; }
+
+#content ol li ol, #content ol li ul { padding: 0 0 15px 40px } 
+#content ol li ol li { list-style-type: decimal; }
+#content ol li ul li { list-style-type: disc; }
+#content ol li ol li, #content ol li ul li { border: none; padding: 0; margin: 0; } 
+
+/* NOTES */
+#content ol li#notes { border: none; margin-top: -32px; }
+#content ol li#notes ol { padding: 0; }
+#content ol li#notes ol li { margin: 0; padding: 10px 0 10px 0; font-size: 12px; list-style-type: none;  border-bottom: 1px solid #222; }
+#content ol li#notes ol li blockquote { margin: 9px 0 0 20px; padding: 0 0 0 10px; border-left: 3px solid #111; }
+#content ol li#notes img { position: relative; border: none; padding: 2px; margin: 3px 6px -6px 0; }
+
+body.show #content ol li { border-bottom: 1px solid #222; }
+body.show #content ol li ol li, body.show #content ol li ul li { border: none; }
+li#comments, p.meta { display: none; }
+body.show li#comments, body.show p.meta { display: block; }
+
+#ck { position: fixed; bottom: 15px; right: 15px; font-size: 12px; color: #333; text-align: right; line-height: 18px; }
+#ck a { color: #444; }
+#ck a:hover { color: #666; }
+
+/* Source logos */
+#content .meta a img { border: none; background: none; padding: 0; margin: 0; vertical-align: text-top; -moz-opacity: 0.1; opacity: 0.1; }
+#content .meta a:hover img { -moz-opacity: 0.15; opacity: 0.15; }
