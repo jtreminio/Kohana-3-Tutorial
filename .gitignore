@@ -1,5 +1,5 @@
-.idea/
 atlassian-ide-plugin.xml
-application/logs/
-application/cache/
+application/logs
+application/cache
 modules/KOstache
+/nbproject
