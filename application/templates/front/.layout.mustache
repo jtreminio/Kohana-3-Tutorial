@@ -1,14 +1,40 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-	<meta charset="utf-8" />
-	<title>{{title}}</title>
-</head>
-<body>
-	<h1>{{title}}</h1>
+    <meta charset="utf-8">
 
-	<p>Begin &#123;&#123;&#62;content&#125;&#125;</p>
-	{{>content}}
-	<p>End &#123;&#123;&#62;content&#125;&#125;</p>
+    <title>{{title}}</title>
+    <link rel="shortcut icon" href="{{base_url}}themes/kalalalani/img/default_avatar_16.gif">
+    <link rel="alternate" type="application/rss+xml" title="RSS" href="#rss">
+    <link href="{{base_url}}themes/kalalalani/css/style.css" rel="stylesheet">
+
+    <!--[if IE]>
+        <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+</head>
+
+<body class="show">
+
+{{>menu}}
+
+<div id="content">
+    <ol>
+	    {{>content}}
+    </ol>
+
+    <div id="pagination">
+        <a class="button next" id="next_page" href="{{base_url}}">&larr; Older</a>
+    </div>
+</div>
+
+<!-- BEGIN TUMBLR CODE -->
+<iframe src="http://assets.tumblr.com/iframe.html?10&amp;src=http%3A%2F%2Fkalalalani.tumblr.com%2F&amp;lang=en_US&amp;name=kalalalani"
+        scrolling="no" width="330" height="25" frameborder="0"
+        style="position:absolute; z-index:1337; top:0px; right:0px; border:0px; background-color:transparent; overflow:hidden;"
+        id="tumblr_controls"></iframe>
+<!-- END TUMBLR CODE -->
+
+<div id="ck"><a href="http://kalalalani.tumblr.com">Kalalalani Theme</a><br>by <a href="http://chriskalani.com">Chris
+    Kalani</a></div>
 </body>
 </html>
